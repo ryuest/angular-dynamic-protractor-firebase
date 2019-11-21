@@ -8,7 +8,7 @@ const {
 exports.config = {
     allScriptsTimeout: 5000,
     specs: [
-      './e2e/src/**/*.e2e-spec.ts'
+      './e2e/**/protected.e2e-spec.ts'
     ],
     capabilities: {
       browserName: 'chrome',
