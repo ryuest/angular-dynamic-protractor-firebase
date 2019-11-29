@@ -6,29 +6,31 @@ const {
 } = require('jasmine-spec-reporter');
 
 exports.config = {
-    allScriptsTimeout: 5000,
+    allScriptsTimeout: 10000,
     specs: [
-      './e2e/**/protected.e2e-spec.ts'
+    //  './test/e2e/**/udemy1.e2e-spec.ts'
+      './test/e2e/**/add_recipe.e2e-spec.ts'
     ],
     capabilities: {
       browserName: 'chrome',
       chromeOptions: {
-        'mobileEmulation': {
-          'deviceName': 'iPhone 8'
-        },
+    //    'mobileEmulation': {
+    //      'deviceName': 'iPhone 8'
+    //    },
       }
     },
       directConnect: true,
-      baseUrl: 'http://localhost:4200/',
+      baseUrl: 'http://localhost:4300/',
       framework: 'jasmine',
+      SELENIUM_PROMISE_MANAGER: false,
       jasmineNodeOpts: {
         showColors: true,
-        defaultTimeoutInterval: 5000,
+        defaultTimeoutInterval: 15000,
         print: function () {}
       },
       onPrepare() {
         require('ts-node').register({
-          project: require('path').join(__dirname, './e2e/tsconfig.e2e.json')
+          project: require('path').join(__dirname, './test/e2e/tsconfig.e2e.json')
         });
         jasmine.getEnv().addReporter(new SpecReporter({
           spec: {

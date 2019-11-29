@@ -1,10 +1,10 @@
-import { LoginPage } from './login.po';
+import { LoginPage2 } from './login.po';
 import { PublicPage } from '../public/public.po';
 
 // https://github.com/shootermv/protractor-tutorial project
 
 describe('protractor-tutorial - Login page', () => {
-  let page: LoginPage;
+  let page: LoginPage2;
   let publicPage: PublicPage;
 
   const wrongCredentias = {
@@ -13,7 +13,7 @@ describe('protractor-tutorial - Login page', () => {
   };
 
   beforeEach(() => {
-    page = new LoginPage();
+    page = new LoginPage2();
     publicPage = new PublicPage();
   });
 

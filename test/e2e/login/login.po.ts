@@ -1,13 +1,13 @@
 import { browser, by, element } from 'protractor';
 
-export class LoginPage {
+export class LoginPage2 {
   private credentias = {
     username: 'test',
     password: 'test'
   };
 
   navigateTo() {
-    return browser.get('/login');
+    return browser.get('http://localhost:4200/login');
   }
 
   fillCredentials(credentias: any = this.credentias) {

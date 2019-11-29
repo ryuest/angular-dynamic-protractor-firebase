@@ -1,12 +1,47 @@
-import { browser, by, element, ExpectedConditions as EC } from 'protractor';
+import {
+  browser,
+  by,
+  element,
+  ExpectedConditions as EC
+} from 'protractor';
+import {
+  LoginPage
+} from './DDDD.po';
 
-describe('adding a new contact with only a name', () => {
-  beforeAll(() => {
-    browser.get('/');
-    browser.waitForAngular();
+import { LoginPage2 } from '../login/login.po';
+import { PublicPage } from '../public/public.po';
+
+describe('adding a new contact with only a name', async () => {
+  let page: LoginPage;
+
+  beforeAll(async () => {
+    page = new LoginPage();
+    await  page.navigateTo();
+    await  browser.waitForAngular();
   });
 
   it('should find the add contact button', async () => {
+    
+ await page.fillCredentials().then(() => {
+
+  // td:nth-child(3)
+
+ const elem = page.getValidElm();
+  
+ console.log('aaaaa' + elem);
+ });
+ 
+
+
+
+
+
+
+
+
+
+    /*
+    
     //  element(by.id('loginUsernameInput')).click();
     element(by.id('email')).sendKeys('ryuest@mail.ru');
     element(by.id('password')).sendKeys('ryuryu88');
@@ -46,21 +81,21 @@ describe('adding a new contact with only a name', () => {
       elem[0].click();
  */
 
-// });
+    // });
 
 
-/*
-    element(by.id('name')).sendKeys('new auto name');
-    element(by.id('imagePath')).sendKeys('https://images.pexels.com/photos/67636/rose-blue-flower-rose-blooms-67636.jpeg');
-    element(by.id('description')).sendKeys('new auto desc');
+    /*
+        element(by.id('name')).sendKeys('new auto name');
+        element(by.id('imagePath')).sendKeys('https://images.pexels.com/photos/67636/rose-blue-flower-rose-blooms-67636.jpeg');
+        element(by.id('description')).sendKeys('new auto desc');
 
-    // Add ingredent
-    element(by.css('button[type="button"]')).click();
-    element(by.css('div[class="col-xs-8"]')).element(by.css('input[type="text"]')).sendKeys('new apple');
-    element(by.css('div[class="col-xs-2"]')).element(by.css('input[type="number"]')).sendKeys('2');
-    element(by.css('button[type="submit"]')).click();
-*/
-    });
-
-
+        // Add ingredent
+        element(by.css('button[type="button"]')).click();
+        element(by.css('div[class="col-xs-8"]')).element(by.css('input[type="text"]')).sendKeys('new apple');
+        element(by.css('div[class="col-xs-2"]')).element(by.css('input[type="number"]')).sendKeys('2');
+        element(by.css('button[type="submit"]')).click();
+    */
   });
+
+
+});
