@@ -11,25 +11,59 @@ import {
 import { LoginPage2 } from '../login/login.po';
 import { PublicPage } from '../public/public.po';
 
-describe('adding a new contact with only a name', async () => {
+// DEBUG node --inspect-brk ./node_modules/.bin/protractor protractor.conf.js 
+// debugger
+
+describe('adding a new contact with only a name',  () => {
   let page: LoginPage;
 
   beforeAll(async () => {
     page = new LoginPage();
-    await  page.navigateTo();
-    await  browser.waitForAngular();
+    await page.navigateTo();
+    
+    await browser.waitForAngular();
   });
 
-  it('should find the add contact button', async () => {
+//  it('when user trying to login with wrong credentials he should stay on “login” page', async () => {
+//   
+//    await page.fillCredentials();
+//    await console.log(expect(page.getPageTitleText()));
+//  });
+
+  it('should find the add contact b2222utton', async () => {
     
- await page.fillCredentials().then(() => {
+    // const aa = await element(by.css('label[for="email"]'));
+    const firstname = element.all(by.css('label[for="email"]'));
+    expect(await firstname.get(0).getText()).toEqual('E-Mail');
+    console.log('HERE2222 ' + await firstname.get(0).getText());
+
+    await page.fillCredentials();
+    // (async () => {
+    browser.ignoreSynchronization = false;
+    console.log('HERE');
+    // tslint:disable-next-line:max-line-length
+   // const elem = await element(by.css('app-recipe-list')).element(by.css('div[class="col-xs-12"]')).element(by.css('button[class="btn"]'));
+    // await browser.get('http://localhost:4200/recipes');
+    await browser.waitForAngular();
+  //  await browser.sleep(3000);
+    const firstname2 = element.all(by.css('h3'));
+    console.log('HERE333 ' + await firstname2.get(0).getText());
+    expect(await firstname2.get(0).getText()).toEqual('E-Mail');
+  //  });
+    
+  //  await elem[0].click();
+ //   console.log(response.body);
+ //   console.log('Error: --> ' + error);
+    
+
 
   // td:nth-child(3)
 
- const elem = page.getValidElm();
+
+ // const elem = page.getValidElm();
   
- console.log('aaaaa' + elem);
- });
+ // console.log('aaaaa' + elem);
+
  
 
 

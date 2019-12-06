@@ -22,7 +22,7 @@ export class LoginPage {
   }
 
   getPageTitleText() {
-    return element(by.css('app-re3333cipe-start')).element(by.css('h3')).getText();
+    return element(by.css('app-recipe-start')).element(by.css('h3')).getText();
   }
 
   async getTitle() {
@@ -33,7 +33,7 @@ export class LoginPage {
   }
 
   clickNewRecipe() {
-      return element(by.css('app-rec333ipe-list')).element(by.css('div[class="col-xs-12"]')).element(by.css('button[class="btn"]')).click();
+      return element(by.css('app-recipe-list')).element(by.css('div[class="col-xs-12"]')).element(by.css('button[class="btn"]')).click();
   }
 
   async getValidElm() {

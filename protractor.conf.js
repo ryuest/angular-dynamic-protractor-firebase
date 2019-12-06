@@ -9,7 +9,7 @@ exports.config = {
     allScriptsTimeout: 10000,
     specs: [
     //  './test/e2e/**/udemy1.e2e-spec.ts'
-      './test/e2e/**/add_recipe.e2e-spec.ts'
+      './test/e2e/mine/add_recipe.e2e-spec.ts'
     ],
     capabilities: {
       browserName: 'chrome',
@@ -20,7 +20,7 @@ exports.config = {
       }
     },
       directConnect: true,
-      baseUrl: 'http://localhost:4300/',
+      baseUrl: 'http://localhost:4200/',
       framework: 'jasmine',
       SELENIUM_PROMISE_MANAGER: false,
       jasmineNodeOpts: {
@@ -28,7 +28,7 @@ exports.config = {
         defaultTimeoutInterval: 15000,
         print: function () {}
       },
-      onPrepare() {
+      onPrepare: async () => {
         require('ts-node').register({
           project: require('path').join(__dirname, './test/e2e/tsconfig.e2e.json')
         });
